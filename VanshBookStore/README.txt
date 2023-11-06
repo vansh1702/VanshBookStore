@@ -57,3 +57,10 @@ Reviewed the SQL Server Object Explorer and made sure each file is created and m
 Added new class named category.cs to VanshBooks.Models and made changes into it
 Added the migration using the PM console and updated the files 
 deleted the AddCategoryToDb so as to resolve the duplication error and updated the database 
+Created a new folder Repository  and in the same folder created IRepository for different interafces
+Then added IRepository.cs into the Irepository folder and made changes into it
+Then in main Repository folder created Repository.cs and made some quick fixes into it and modified the code using the codeprovided on blackboard
+Created Categoryrepository.cs and ICategoryReposity.cs and made changes into the CategoryRepository
+Made some changes at the top by using statements in ICategoryRepository.cs and then fixed the error in Category.cs by quick fixes available
+Completed the remaining modifications in CategoryRepository.cs
+
