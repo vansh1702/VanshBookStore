@@ -54,4 +54,6 @@ Made sure by testing and building the application that there are no errors and f
 Commented out in appsettings.json
 20231106201020_AddDefaultIdentityMigration.cs Created the new migration file using the Nuget Console
 Reviewed the SQL Server Object Explorer and made sure each file is created and made sure there are no errors, then tested the application
-
+Added new class named category.cs to VanshBooks.Models and made changes into it
+Added the migration using the PM console and updated the files 
+deleted the AddCategoryToDb so as to resolve the duplication error and updated the database 
