@@ -52,4 +52,6 @@ Starting Part 2 2023-11-06
 1502
 Made sure by testing and building the application that there are no errors and file is working perfectly.
 Commented out in appsettings.json
+20231106201020_AddDefaultIdentityMigration.cs Created the new migration file using the Nuget Console
+Reviewed the SQL Server Object Explorer and made sure each file is created and made sure there are no errors, then tested the application
 
