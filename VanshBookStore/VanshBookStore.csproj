@@ -29,8 +29,4 @@
     <ProjectReference Include="..\VanshBooks.Utility\VanshBooks.Utility.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Views\" />
-  </ItemGroup>
-
 </Project>
