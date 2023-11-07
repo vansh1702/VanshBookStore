@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using VanshBooks.DataAccess.Repository;
+using VanshBooks.DataAccess.Repository.IRepository;
 using VanshBookStore.DataAccess.Data;
 
 namespace VanshBookStore
@@ -28,6 +30,7 @@ namespace VanshBookStore
 
             services.AddDefaultIdentity<IdentityUser>()                                           // options => options.SignIn.RequireConfirmedAccount = true
                  .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 

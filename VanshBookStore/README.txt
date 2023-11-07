@@ -65,3 +65,6 @@ Made some changes at the top by using statements in ICategoryRepository.cs and t
 Completed the remaining modifications in CategoryRepository.cs
 Created ISP_Call.cs and made changes into the code  into IRepository folder
 Added a new class SP_Call.cs in the Repository Folder and made changes into the code by quick fixes and added using statements at the top
+Made the final changes in SP_Call.cs and now gonna add new interface IUnitOfWork to IRepository
+Created the UnitOfWork and IunitOfWork interafce in the folder and made changes into the code 
+Then to Make file accessible we need to register it in Startup.cs in the ConfigureServices method 
