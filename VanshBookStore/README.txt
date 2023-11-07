@@ -63,4 +63,5 @@ Then in main Repository folder created Repository.cs and made some quick fixes i
 Created Categoryrepository.cs and ICategoryReposity.cs and made changes into the CategoryRepository
 Made some changes at the top by using statements in ICategoryRepository.cs and then fixed the error in Category.cs by quick fixes available
 Completed the remaining modifications in CategoryRepository.cs
-
+Created ISP_Call.cs and made changes into the code  into IRepository folder
+Added a new class SP_Call.cs in the Repository Folder and made changes into the code by quick fixes and added using statements at the top
