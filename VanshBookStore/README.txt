@@ -46,7 +46,7 @@ Tested the application and works fine.
 Done Assignment 2-(I) 
 
 Now started The project again as it was not showing all 4 projects as I made a mistake in starting that I checked the PLACE THE SOLUTION IN THE SAME FOLDER 
-repeating all the steps and just changed the css as it was so bright and was not looking good as a theme.
+
 
 Starting Part 2 2023-11-06
 1502
