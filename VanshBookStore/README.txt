@@ -46,7 +46,7 @@ Tested the application and works fine.
 Done Assignment 2-(I) 
 
 Now started The project again as it was not showing all 4 projects as I made a mistake in starting that I checked the PLACE THE SOLUTION IN THE SAME FOLDER 
-
+Made changes into css as first one was so bright , unable to find the words in it So used cosmo as a theme.
 
 Starting Part 2 2023-11-06
 1502
@@ -68,4 +68,30 @@ Added a new class SP_Call.cs in the Repository Folder and made changes into the 
 Made the final changes in SP_Call.cs and now gonna add new interface IUnitOfWork to IRepository
 Created the UnitOfWork and IunitOfWork interafce in the folder and made changes into the code 
 Then to Make file accessible we need to register it in Startup.cs in the ConfigureServices method 
-Finally completed the IUnitOfWork and UnitOfWork after some errors as i was missing letter I before UnitOfWork
+Finally completed the IUnitOfWork and UnitOfWork after some errors as I was missing letter I before UnitOfWork
+Now added the MVC Controller- Empty inside Areas/Admin and named it as CategoryController.cs
+Modified the code by using statements to use IUnitOfWork
+Now added new folder in Areas/Views with the same name as Controllers, then add new Index view to the folder and modified using code from blackboard
+Saved and tested the application
+in _Layout.cshtml moved the Category link to Content Management Dropdown and made some changes into the code
+Modified the Index.cshtml and added the icons of delete and update and then commented out those as it was not needed, it was just to review
+Added the Javascript from blackboard into the wwwroot/js folder , also added @section call to category.js in Index.cshtml
+Added the IAction result to the controller and added a View in CategoryController.ccs by clicking on Upsert and added
+Created a partial view in Views>Shared folder named _CreateAndBackToListButton and added the asp-action into it, also created _EditAndBackToListButton
+Modified the Upsert.cshtml using the @model statement and added the asp-action to Index.cshtml 
+Added @section call to Scripts to validate input
+Now created Upsert POST action method in the CategoryController.cs , added the void Save method to IUnitOfWork and removed and modified the code
+Added the API call for DELETE in CategoryController.cs , implemented Delete method in category.js to add functionality and to call
+Added the DELETE FUNCTION CODE from slides 
+Code working perfect and pushed to github 
+
+
+
+Errors I got 
+getting error  Microsoft.Data.SqlClient.SqlException: 'Cannot open database "VanshBookStore" requested by the login. The login failed.
+Login failed for user 'ACAD\W0827163'.'
+fixed the error as i needed to update the database
+NOW DELETE button doesn't work.
+found and fixed the error :)
+
+2049 done part 2-II
