@@ -85,13 +85,13 @@ Added the API call for DELETE in CategoryController.cs , implemented Delete meth
 Added the DELETE FUNCTION CODE from slides 
 Code working perfect and pushed to github 
 
-
-
 Errors I got 
 getting error  Microsoft.Data.SqlClient.SqlException: 'Cannot open database "VanshBookStore" requested by the login. The login failed.
 Login failed for user 'ACAD\W0827163'.'
 fixed the error as i needed to update the database
 NOW DELETE button doesn't work.
 found and fixed the error :)
-
 2049 done part 2-II
+
+Starting Part 2 2023-11-20  1800
+Created CoverType.cs in Model's folder same way created for Category.cs
