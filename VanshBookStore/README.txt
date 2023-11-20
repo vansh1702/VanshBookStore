@@ -95,3 +95,4 @@ found and fixed the error :)
 
 Starting Part 2 2023-11-20  1800
 Created CoverType.cs in Model's folder same way created for Category.cs
+Added ICoverTypeRepository interface in IRepository and CoverTypeRepository in Repository folder in VanshBooks.DataAccess
