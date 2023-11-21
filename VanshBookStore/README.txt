@@ -110,3 +110,4 @@ Ran the add-migration and update command and below is the timestamp.....
 
 Now added ProductRepository to Repository and made the changes into the code
 then added IProductrepository interface and modified the code 
+Added the Product to UnitOfWork and IUnitOfWork as initially was getting errors, made some changes and modified ... working fine now .

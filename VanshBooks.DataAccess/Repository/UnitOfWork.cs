@@ -1,6 +1,10 @@
 ﻿using VanshBooks.DataAccess.Repository.IRepository;
+using VanshBooks.DataAccess.Repository;
 using VanshBookStore.DataAccess.Data;
 using System;
+using System.Collections.Generic;
+using System.Text;
+using VanshBooks.Models;
 
 namespace VanshBooks.DataAccess.Repository
 {
@@ -14,11 +18,13 @@ namespace VanshBooks.DataAccess.Repository
             Category = new CategoryRepository(_db);
             SP_Call = new SP_Call(_db);
             CoverType = new CoverTypeRepository(_db); // Instantiate the CoverType repository
+            Product = new ProductRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; }
         public ISP_Call SP_Call { get; private set; }
         public ICoverTypeRepository CoverType { get; private set; } // Ensure this is set in the constructor
+        public IProductRepository Product { get; set; }
 
         public void Dispose()
         {
