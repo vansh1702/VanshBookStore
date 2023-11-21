@@ -115,4 +115,5 @@ Done Part III- Section 1  2047
 
 Starting Section-2 2050
 Created ProductController.cs and modified the code and added some using statements in the code 
-
+Created a ProductVM in the Models project and mofied the code 
+Installed Microsoft.AspNetCore.Mvc.ViewFeatures packages for the errors and now working fine 
