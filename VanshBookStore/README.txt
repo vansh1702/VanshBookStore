@@ -99,3 +99,5 @@ Added ICoverTypeRepository interface in IRepository and CoverTypeRepository in R
 after this used the DataAccess folder to add-migration and then updated the database 
 first was getting the errors, forgot to implement the using statements 
 Working fine now with zero errors 
+Opened the _Layout.cshtml in Views/Shared directory and added the link for nav-bar
+Created CoverTypeController.cs in the VanshBookStore/Areas/Customers/Controllers folder and modified the code as done previously.
