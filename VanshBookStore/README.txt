@@ -101,3 +101,5 @@ first was getting the errors, forgot to implement the using statements
 Working fine now with zero errors 
 Opened the _Layout.cshtml in Views/Shared directory and added the link for nav-bar
 Created CoverTypeController.cs in the VanshBookStore/Areas/Customers/Controllers folder and modified the code as done previously.
+Was getting errors as it was throwing exception and then finally found the error as I didnt modify the code in UnitOfWork and then modified and working fine 
+
