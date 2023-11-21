@@ -118,3 +118,4 @@ Created ProductController.cs and modified the code and added some using statemen
 Created a ProductVM in the Models project and mofied the code 
 Installed Microsoft.AspNetCore.Mvc.ViewFeatures packages for the errors and now working fine 
 Modified the ProductController and added some using statements at the top 
+Modified the API call to include the Category and CoverType properties 
