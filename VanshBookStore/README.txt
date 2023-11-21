@@ -94,5 +94,8 @@ found and fixed the error :)
 2049 done part 2-II
 
 Starting Part 2 2023-11-20  1800
-Created CoverType.cs in Model's folder same way created for Category.cs
-Added ICoverTypeRepository interface in IRepository and CoverTypeRepository in Repository folder in VanshBooks.DataAccess
+Created CoverType.cs in Model's folder same way created for Category.cs and made changes into the code for it to work.
+Added ICoverTypeRepository interface in IRepository and CoverTypeRepository in Repository folder in VanshBooks.DataAccess 
+after this used the DataAccess folder to add-migration and then updated the database 
+first was getting the errors, forgot to implement the using statements 
+Working fine now with zero errors 
