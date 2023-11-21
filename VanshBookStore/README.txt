@@ -1,4 +1,4 @@
-﻿2023-10-23 
+2023-10-23 
 1527 
 Created a new ASP.Net MVC app using .Net5 SDK with Individual User Accound authorization 
 Added a README.txt file  
@@ -119,3 +119,8 @@ Created a ProductVM in the Models project and mofied the code
 Installed Microsoft.AspNetCore.Mvc.ViewFeatures packages for the errors and now working fine 
 Modified the ProductController and added some using statements at the top 
 Modified the API call to include the Category and CoverType properties 
+Added an Index View and modified the code for it to show on Product page and gave the reference new product.js
+Modified the product.js for it to work and modified the _Layout.cshtml so as to add a new link to Product.
+After running and testing it shows an error and shows as AJAX error
+No luck fixing error :(       
+2244 closing 
