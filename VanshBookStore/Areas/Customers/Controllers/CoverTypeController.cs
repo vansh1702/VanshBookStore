@@ -8,11 +8,12 @@ using VanshBooks.Models;
 
 namespace VanshBookStore.Areas.Customers.Controllers
 {
+
     [Area("Admin")]
     public class CoverTypeController : Controller
     {
-
         private readonly IUnitOfWork _unitOfWork;
+
         public CoverTypeController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -29,6 +30,7 @@ namespace VanshBookStore.Areas.Customers.Controllers
             {
                 return View(coverType);
             }
+
             coverType = _unitOfWork.CoverType.Get(id.GetValueOrDefault());
             if (coverType == null)
             {
@@ -36,8 +38,10 @@ namespace VanshBookStore.Areas.Customers.Controllers
             }
             return View(coverType);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public IActionResult Upsert(CoverType coverType)
         {
             if (ModelState.IsValid)
@@ -45,7 +49,7 @@ namespace VanshBookStore.Areas.Customers.Controllers
                 if (coverType.Id == 0)
                 {
                     _unitOfWork.CoverType.Add(coverType);
-                    _unitOfWork.Save();
+
                 }
                 else
                 {
@@ -56,6 +60,8 @@ namespace VanshBookStore.Areas.Customers.Controllers
             }
             return View(coverType);
         }
+
+        //api calls
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
@@ -63,6 +69,8 @@ namespace VanshBookStore.Areas.Customers.Controllers
             var allObj = _unitOfWork.CoverType.GetAll();
             return Json(new { data = allObj });
         }
+        #endregion
+
         [HttpDelete]
         public IActionResult Delete(int id)
         {
@@ -75,6 +83,6 @@ namespace VanshBookStore.Areas.Customers.Controllers
             _unitOfWork.Save();
             return Json(new { success = true, message = "Delete successful" });
         }
-        #endregion
     }
+
 }

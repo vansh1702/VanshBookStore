@@ -8,10 +8,12 @@ using VanshBooks.Models;
 
 namespace VanshBookStore.Areas.Admin.Controllers
 {
+
     [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+
         public CategoryController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -28,6 +30,7 @@ namespace VanshBookStore.Areas.Admin.Controllers
             {
                 return View(category);
             }
+
             category = _unitOfWork.Category.Get(id.GetValueOrDefault());
             if (category == null)
             {
@@ -35,8 +38,10 @@ namespace VanshBookStore.Areas.Admin.Controllers
             }
             return View(category);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public IActionResult Upsert(Category category)
         {
             if (ModelState.IsValid)
@@ -44,17 +49,19 @@ namespace VanshBookStore.Areas.Admin.Controllers
                 if (category.Id == 0)
                 {
                     _unitOfWork.Category.Add(category);
-                    _unitOfWork.Save();
+
                 }
                 else
                 {
                     _unitOfWork.Category.Update(category);
                 }
                 _unitOfWork.Save();
-                return RedirectToAction(nameof(Index));            //to see all the categories
+                return RedirectToAction(nameof(Index));
             }
             return View(category);
         }
+
+        //api calls
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
@@ -62,6 +69,7 @@ namespace VanshBookStore.Areas.Admin.Controllers
             var allObj = _unitOfWork.Category.GetAll();
             return Json(new { data = allObj });
         }
+        #endregion
 
         [HttpDelete]
         public IActionResult Delete(int id)
@@ -75,6 +83,5 @@ namespace VanshBookStore.Areas.Admin.Controllers
             _unitOfWork.Save();
             return Json(new { success = true, message = "Delete successful" });
         }
-        #endregion
     }
 }
