@@ -282,7 +282,7 @@ namespace VanshBooks.DataAccess.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("ListPrice")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.Property<string>("Title")

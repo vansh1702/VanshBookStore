@@ -7,7 +7,7 @@ namespace VanshBooks.DataAccess.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "ListPrice",
+                name: "Price",
                 table: "Products",
                 newName: "Price");
         }
@@ -17,7 +17,7 @@ namespace VanshBooks.DataAccess.Migrations
             migrationBuilder.RenameColumn(
                 name: "Price",
                 table: "Products",
-                newName: "ListPrice");
+                newName: "Price");
         }
     }
 }
