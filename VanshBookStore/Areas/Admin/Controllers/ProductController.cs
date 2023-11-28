@@ -23,7 +23,6 @@ namespace VanshBookStore.Areas.Customers.Controllers
             _unitOfWork = unitOfWork;
             _hostEnvironment = hostEnvironment;
         }
-
         public IActionResult Index()
         {
             return View();
@@ -43,26 +42,22 @@ namespace VanshBookStore.Areas.Customers.Controllers
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
-                })
+                }),
             };
-
             if (id == null)
             {
-                // This is for create
                 return View(productVM);
             }
-
-            // This is for edit
             productVM.Product = _unitOfWork.Product.Get(id.GetValueOrDefault());
-
             if (productVM.Product == null)
             {
                 return NotFound();
             }
-
             return View(productVM);
         }
 
+
+        //API calls here
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(ProductVM productVM)
@@ -71,7 +66,6 @@ namespace VanshBookStore.Areas.Customers.Controllers
             {
                 string webRootPath = _hostEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
-
                 if (files.Count > 0)
                 {
                     string fileName = Guid.NewGuid().ToString();
@@ -80,25 +74,22 @@ namespace VanshBookStore.Areas.Customers.Controllers
 
                     if (productVM.Product.ImageUrl != null)
                     {
-                        // This is an edit, and we need to remove the old image
+                        // this is an edit and we need to remove old image
                         var imagePath = Path.Combine(webRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
-
                         if (System.IO.File.Exists(imagePath))
                         {
                             System.IO.File.Delete(imagePath);
                         }
                     }
-
                     using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                     {
                         files[0].CopyTo(filesStreams);
                     }
-
                     productVM.Product.ImageUrl = @"\images\products\" + fileName + extension;
                 }
                 else
                 {
-                    // Update when they do not change the image
+                    // update when they do not change the image
                     if (productVM.Product.Id != 0)
                     {
                         Product objFromDb = _unitOfWork.Product.Get(productVM.Product.Id);
@@ -114,7 +105,6 @@ namespace VanshBookStore.Areas.Customers.Controllers
                 {
                     _unitOfWork.Product.Update(productVM.Product);
                 }
-
                 _unitOfWork.Save();
                 return RedirectToAction(nameof(Index));
             }
@@ -125,56 +115,40 @@ namespace VanshBookStore.Areas.Customers.Controllers
                     Text = i.Name,
                     Value = i.Id.ToString()
                 });
-
                 productVM.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
                 });
-
                 if (productVM.Product.Id != 0)
                 {
                     productVM.Product = _unitOfWork.Product.Get(productVM.Product.Id);
                 }
             }
-
             return View(productVM);
         }
 
         #region API CALLS
-
         [HttpGet]
         public IActionResult GetAll()
         {
             var allObj = _unitOfWork.Product.GetAll(includeProperties: "Category,CoverType");
             return Json(new { data = allObj });
+
         }
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
             var objFromDb = _unitOfWork.Product.Get(id);
-
             if (objFromDb == null)
             {
                 return Json(new { success = false, message = "Error while deleting" });
             }
-
-            string webRootPath = _hostEnvironment.WebRootPath;
-            var imagePath = Path.Combine(webRootPath, objFromDb.ImageUrl.TrimStart('\\'));
-
-            if (System.IO.File.Exists(imagePath))
-            {
-                System.IO.File.Delete(imagePath);
-            }
-
             _unitOfWork.Product.Remove(objFromDb);
             _unitOfWork.Save();
-
             return Json(new { success = true, message = "Delete Successful" });
         }
-
         #endregion
     }
 }
-
