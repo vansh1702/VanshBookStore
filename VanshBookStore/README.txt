@@ -124,3 +124,45 @@ Modified the product.js for it to work and modified the _Layout.cshtml so as to 
 After running and testing it shows an error and shows as AJAX error
 No luck fixing error :(       
 2244 closing 
+
+
+Starting Section-3 2023-11-27 1629
+Created Upsert.cs for Products and modified in Areas>Admin>Views>Product 
+Then added the textbox to textarea to display the Sweet Alert
+Ran the application to see if getting errors , was getting the exception of Ajax when creating a new Product
+Added a new folder in wwwroot>images and in images added products
+In ProductController uncommented the code which we commented earlier.
+Checked the errors still getting it and after checking for errors went to remove the space between IAction and CoverType and then updated the database then started working
+
+And also created Migration for product again and this time updated the ProductRepository with it 
+Made some changes into Product.cs and changed the ListPrice to just Price 
+from the provided code 
+Then added the migration PriceToDb and then updated the database for it to show there but was getting error
+
+Still getting error when running the file , now made some changes in ProductController.cs
+
+
+1730
+Looking through whole code again and not able to locate the error in the end just made changes into the 
+Migrations/addProductToDb changed the ListPrice to Price and
+also changed Migrations/PriceToDb
+Also made few changes in the product.js file as changed the listPrice to Price
+still getting the error
+
+2029
+trying to fix the error no luck....
+now i found that my Controller were in wrong folder which were in VanshBookStore/Areas/Customers/Controllers and then moved the ProductController and CoverTypeController to VanshBookStore/Areas/Admin/Controllers folder 
+Now again looked into product.js and modified the code in hope that it will work 
+Now added the product with price and image but it added now it doesn't show on the main Index page 
+So as it was not showing on the Index page so :
+changed and modified the code of Index.cshtml as over there it was Product.js and needed to be product.js
+Also made several changes into the Startup.cs 
+still not showing up...
+
+2058
+Looked through whole code again so for image to add first went to Index.cshtml again and reviewed the code and it was fine 
+Now reviewed the HomeController and changed the code and was not working but I found the error  [Area("Customers")] as I was typing ("Customer") and fixed it 
+Now reviewed the VanshBookStore/Areas/Admin/Views/Product/Upsert.cshtml and looked through code and made some changes again
+Lastly I reviewed the ProductController and updated the code again and when I tested by giving in info and providing image it finally showed up after updating the database...
+Project Working fine ....
+
