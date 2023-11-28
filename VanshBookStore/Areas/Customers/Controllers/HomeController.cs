@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using VanshBooks.DataAccess.Repository.IRepository;
 using VanshBookStore.Models;
 
 namespace VanshBookStore.Area.Customers.Controllers
@@ -18,6 +19,7 @@ namespace VanshBookStore.Area.Customers.Controllers
         {
             _logger = logger;
         }
+       
 
         public IActionResult Index()
         {
